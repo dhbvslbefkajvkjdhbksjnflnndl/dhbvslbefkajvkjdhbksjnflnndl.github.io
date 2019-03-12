@@ -1,0 +1,65 @@
+body{
+  margin: 0;
+  padding: 0;
+
+}
+
+.pageWrap{
+  margin: 0 auto;
+  width: 80vw;
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+
+.innerLiner{
+  margin: 0;
+}
+
+.box{
+  display: inline-block;
+  white-space: normal;
+  margin: 0;
+  padding: 1em;
+  width: calc(80vw - 2em);
+  background-color: pink;
+  height: 80vh;
+
+
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.box2{
+	background-color: yellow;
+}
+
+.box3{
+	background-color: green;
+}
+
+.pageButtons{
+  position: relative;
+  bottom: 0;
+  text-align: center;
+}
+
+.pageButtons input{
+    margin: 1em 2em;
+}
+
+
+@media only screen and (max-device-width: 480px) {
+  .pageWrap{
+    width: 100vw;
+  }
+
+  .box{
+    width: calc(100vw - 2em);
+    height: 90vh;
+
+  }
+
+}
