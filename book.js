@@ -80,7 +80,7 @@ function changeColor(){
 }
 
 function showArrows(){
-  $('#mobileArrows').css("display", "flex");
+  $('#mobileArrows button').show();
 }
 
 function changeColors(el) {
@@ -105,7 +105,7 @@ function mobileArrows(el) {
         showArrows();
       }
       else if (document.body.scrollTop === 0){
-        $('#mobileArrows').css("display", "none");
+        $('#mobileArrows button').css("display", "none");
       }
   });
 }
