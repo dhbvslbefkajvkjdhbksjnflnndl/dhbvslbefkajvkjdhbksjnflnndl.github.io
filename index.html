@@ -23,7 +23,7 @@
   <meta name="twitter:image" content="" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+  <script src="hammer.js"></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@ HELLO
 
 <div class="pageWrap" id="pages">
   <div class="innerLiner">
-    <div class="box">
+    <div class="box" id="box1">
           Version 1.1<br><br>
           On an exceptionally hot evening early in July a young man came out of the garret in which he lodged in S. Place and walked slowly, as though in hesitation, towards K. bridge.<br>
           <br>
@@ -401,29 +401,36 @@ HELLO
       checkButton();
   }
 
-  var myElement = document.getElementById('pages');
 
   if($(window).width() < 740){
-  // create a simple instance
-  // by default, it only adds horizontal recognizers
-  var mc = new Hammer(myElement);
+    $('.box').each(function(){
+      var $this = $(this);
+      var mc = new Hammer(this);
 
-  // listen to events...
-  mc.on("panright", function() {
-    if(debounce == true && count != 1){
-      debounce = false;
-      goLeft();
-      setTimeout(function(){ debounce = true; }, 700);
-    }
+      mc.on('swiperight', function(){
+        if(debounce == true && count != 1){
+          debounce = false;
+          goLeft();
+          setTimeout(function(){ debounce = true; }, 700);
+        }
+      });
+
+      mc.on('swipeleft', function(){
+        if(debounce == true && count != max){
+          debounce = false;
+          goRight();
+          setTimeout(function(){ debounce = true; }, 700);
+        }
+      });
+
   });
-  mc.on("panleft", function() {
-    if(debounce == true && count != max){
-      debounce = false;
-      goRight();
-      setTimeout(function(){ debounce = true; }, 700);
-    }
-  });
-}
+
+
+
+
+
+  }
+
   window.onload = start();
 </script>
 
