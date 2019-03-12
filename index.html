@@ -23,8 +23,10 @@
   <meta name="twitter:image" content="" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 </head>
 
+<body>
 <div class="pageWrap">
 
   <div class="innerLiner">
@@ -349,13 +351,6 @@
 
 </div>
 
-
-<body>
-
-</body>
-</html>
-
-
 <script>
 
   var count = 1;
@@ -385,18 +380,25 @@
   }
 
 
-  function checkButton(){
-  if(count == 1){
-    $( ".backBtn" ).css("opacity", "0");
-  }
-  else if(count == 3){
-    $( ".nextBtn" ).css("opacity", "0");
-  }
-  else{
-    $( ".backBtn" ).css("opacity", "1");
-    $( ".nextBtn" ).css("opacity", "1");
-  }
-  document.getElementById("pageNumber").innerHTML = count.toString();
+function checkButton(){
+    // var myElement = document.getElementById('.box');
+    // var mc = new Hammer(myElement);
+    // mc.on("panleft panright tap press", function(ev) {
+    //     myElement.textContent = ev.type +" gesture detected.";
+    // });
+
+
+    if(count == 1){
+      $( ".backBtn" ).css("opacity", "0");
+    }
+    else if(count == 3){
+      $( ".nextBtn" ).css("opacity", "0");
+    }
+    else{
+      $( ".backBtn" ).css("opacity", "1");
+      $( ".nextBtn" ).css("opacity", "1");
+    }
+    document.getElementById("pageNumber").innerHTML = count.toString();
 }
 
 function start(){
@@ -406,3 +408,6 @@ function start(){
 window.onload = start();
 
 </script>
+
+</body>
+</html>

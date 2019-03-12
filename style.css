@@ -59,7 +59,6 @@ body{
   .box{
     width: calc(100vw - 2em);
     height: 90vh;
-
   }
 
 }
