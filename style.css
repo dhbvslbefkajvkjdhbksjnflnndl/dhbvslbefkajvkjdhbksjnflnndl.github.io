@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Lato');
+
+/* font-family: 'EB Garamond', serif;
+font-family: 'Lato', sans-serif; */
+
 body{
   margin: 0;
   padding: 0;
-
+  font-family: 'EB Garamond', serif;
 }
 
 .pageWrap{
@@ -22,7 +27,7 @@ body{
   padding: 1em;
   width: calc(80vw - 2em);
   background-color: pink;
-  height: 80vh;
+  height: 85vh;
 
 
   overflow-y: scroll; /* has to be scroll, not auto */
@@ -42,23 +47,35 @@ body{
 
 .pageButtons{
   position: relative;
-  bottom: 0;
+  width: 100%;
+  height: 2em;
+  bottom: 0em;
   text-align: center;
+  background: white;
+  padding: 0.5em 0;
 }
 
-.pageButtons input{
-    margin: 1em 2em;
+.pageButtons button{
+    margin: 0em 2em;
+    border: none;
+    background: none;
 }
 
 
 @media only screen and (max-device-width: 480px) {
   .pageWrap{
     width: 100vw;
+    /* height: calc(100vh - 2em); */
+  }
+
+  .pageButtons{
+    height: 1em;
   }
 
   .box{
     width: calc(100vw - 2em);
-    height: 90vh;
+    height: calc(100vh - 5em);
+
   }
 
 }
