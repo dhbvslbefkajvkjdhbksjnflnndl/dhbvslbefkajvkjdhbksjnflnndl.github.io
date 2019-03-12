@@ -380,33 +380,25 @@
   }
 
 
-function checkButton(){
-    // var myElement = document.getElementById('.box');
-    // var mc = new Hammer(myElement);
-    // mc.on("panleft panright tap press", function(ev) {
-    //     myElement.textContent = ev.type +" gesture detected.";
-    // });
+  function checkButton(){
+      if(count == 1){
+        $( ".backBtn" ).css("opacity", "0");
+      }
+      else if(count == 3){
+        $( ".nextBtn" ).css("opacity", "0");
+      }
+      else{
+        $( ".backBtn" ).css("opacity", "1");
+        $( ".nextBtn" ).css("opacity", "1");
+      }
+      document.getElementById("pageNumber").innerHTML = count.toString();
+  }
 
+  function start(){
+    checkButton();
+  }
 
-    if(count == 1){
-      $( ".backBtn" ).css("opacity", "0");
-    }
-    else if(count == 3){
-      $( ".nextBtn" ).css("opacity", "0");
-    }
-    else{
-      $( ".backBtn" ).css("opacity", "1");
-      $( ".nextBtn" ).css("opacity", "1");
-    }
-    document.getElementById("pageNumber").innerHTML = count.toString();
-}
-
-function start(){
-  checkButton();
-}
-
-window.onload = start();
-
+  window.onload = start();
 </script>
 
 </body>
