@@ -40,6 +40,10 @@ body {
    flex-direction: column;
  }
 
+ #mobileArrows{
+   display: none;
+ }
+
  .bookTitle a{
    color: blue;
  }
@@ -171,8 +175,21 @@ body {
     padding: 1em 0.5em 0.8em 0.5em;
   }
 
-  /* .box p {
-  padding: 0;
-  } */
+  #mobileArrows{
+    display: none;
+    justify-content: space-between;
+    height: 2em;
+    position: fixed;
+    top: 0.95em;
+    width: calc(100vw - 2em);
+    padding: 0 1em;
+    z-index: 99999999;
+  }
+
+  #mobileArrows .fas{
+    color: black;
+    font-size: 1.4em;
+  }
+
 
 }

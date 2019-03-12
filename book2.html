@@ -29,6 +29,11 @@
 <body>
 
 <div id="title"><a href="index.html"><h1>son of bear parade</h1></a></div>
+<div id="mobileArrows">
+<button class="backBtn"><i class='fas fa-arrow-left'></i></button>
+<button class="nextBtn"><i class='fas fa-arrow-right'></i></button>
+</div>
+
 
 <div id="greeting" class="greeting">
 <div class="bookTitle">
@@ -368,115 +373,8 @@ This is a very long book title, it makes me look quirky but the whole book is ab
 
 </div>
 
+<script src="book.js"></script>
 
-<script>
-  var count = 1;
-  var max = $(".box").length;
-  var debounce = true;
-
-  $( ".nextBtn" ).click(function(e) {
-  goRight();
-  });
-  $( ".backBtn" ).click(function(e) {
-  goLeft();
-  });
-  // $( ".readBtn" ).click(function(e) {
-  // scrollDown();
-  // });
-
-  function scrollDown(){
-    $("html, body").animate({ scrollTop: $(document).height() }, 2300);
-  }
-
-  function goRight(){
-      width = $('.pageWrap').width();
-      var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*1;
-      var newLeftMargin = (initalLeftMargin - width);
-      $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
-      count++;
-      checkButton();
-      changeColor();
-      }
-  function goLeft(){
-      width = $('.pageWrap').width();
-      var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*1;
-      var newLeftMargin = (initalLeftMargin + width);
-      $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
-      count--;
-      checkButton();
-      changeColor();
-  }
-
-  function checkButton(){
-      if(count == 1){
-        $( ".backBtn" ).css("opacity", "0");
-      }
-      else if(count == max){
-        $( ".nextBtn" ).css("opacity", "0");
-      }
-      else{
-        $( ".backBtn" ).css("opacity", "1");
-        $( ".nextBtn" ).css("opacity", "1");
-      }
-      document.getElementById("pageNumber").innerHTML = count.toString();
-  }
-
-  function start(){
-      checkButton();
-  }
-
-
-  if($(window).width() < 740){
-    $('.box').each(function(){
-      var $this = $(this);
-      var mc = new Hammer(this);
-
-      mc.on('swiperight', function(){
-        if(debounce == true && count != 1){
-          debounce = false;
-          goLeft();
-          setTimeout(function(){ debounce = true; }, 700);
-        }
-      });
-
-      mc.on('swipeleft', function(){
-        if(debounce == true && count != max){
-          debounce = false;
-          goRight();
-          setTimeout(function(){ debounce = true; }, 700);
-        }
-      });
-
-  });
-  }
-
-  function changeColor(){
-    var colors = ["pink", "gold", "AliceBlue"];
-    $('body').css("background-color", colors[count-1])
-  }
-
-  function changeColors(el) {
-    var windowHeight = jQuery( window ).height();
-    $(el).each(function(){
-        var thisPos = $(this).offset().top;
-        var thisBottom = thisPos + $(this).outerHeight(true);;
-        var topOfWindow = $(window).scrollTop();
-        if (topOfWindow + windowHeight > 200 + thisPos ) {
-          changeColor();
-        }
-    });
-  }
-
-  $(document).ready(function(){
-      changeColors('.box');
-  });
-
-  $(window).scroll(function() {
-    changeColors('.box');
-  });
-
-  window.onload = start();
-</script>
 
 </body>
 </html>
