@@ -30,6 +30,14 @@
 
 <div id="title"><h1>son of bear parade</h1></div>
 
+<div id="greeting">
+<div class="bookTitle">This is the title of the book, it's probably very long. We could have here the link to B side too.</div>
+
+<button class="readBtn">Read</button>
+
+
+</div>
+
 <div class="pageWrap" id="pages">
 
 <div class="pageButtons">
@@ -366,6 +374,14 @@
   $( ".backBtn" ).click(function(e) {
   goLeft();
   });
+  $( ".readBtn" ).click(function(e) {
+  scrollDown();
+  // $( ".readBtn" ).fadeTo(100,1);
+  });
+
+  function scrollDown(){
+    $("html, body").animate({ scrollTop: $(document).height() }, 2300);
+  }
 
   function goRight(){
       width = $('.pageWrap').width();

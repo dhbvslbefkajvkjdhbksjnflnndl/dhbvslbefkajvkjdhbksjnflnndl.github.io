@@ -16,6 +16,36 @@ body {
    font-style: italic;
  }
 
+ .bookTitle{
+   text-align: center;
+   font-size: 1.5em;
+   font-weight: bold;
+   font-style: italic;
+   margin-bottom: 2em;
+ }
+
+ #greeting{
+   min-height: 100vh;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+ }
+
+
+ .readBtn{
+   border: 1px white solid;
+   padding: 1em 2em;
+   border-radius: 2em;
+   background-color: white;
+   font-size: 1em;
+   font-weight: bold;
+   -moz-box-shadow:      2px 5px 5px -5px rgba(17,17,17,0.75);
+    -webkit-box-shadow:  2px 5px 5px -5px rgba(17,17,17,0.75);
+    box-shadow:          2px 5px 5px -5px rgba(17,17,17,0.75);
+ }
+
 #header{
   height: 2em;
   background: white;
@@ -34,7 +64,7 @@ body {
 #title{
   background-color: inherit;
   z-index: 999999;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 2em;
   padding: 0.5em;
