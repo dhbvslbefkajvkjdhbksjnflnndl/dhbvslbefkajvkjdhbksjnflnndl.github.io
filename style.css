@@ -33,6 +33,7 @@ body{
 
 .innerLiner{
   margin: 0;
+  padding: 0;
 }
 
 .box{
@@ -85,9 +86,11 @@ body{
 
   .pageButtons{
     height: 1em;
+    display: none;
   }
 
   .box{
+    padding-bottom: 4em;
     width: calc(100vw - 2em);
     height: calc(100vh - 5em);
   }

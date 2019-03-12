@@ -32,7 +32,7 @@
 HELLO
 </div> -->
 
-<div class="pageWrap">
+<div class="pageWrap" id="pages">
   <div class="innerLiner">
     <div class="box">
           CHAPTER I<br><br>
@@ -356,6 +356,8 @@ HELLO
 
 <script>
   var count = 1;
+  var max = $(".box").length;
+  var debounce = true;
 
   $( ".nextBtn" ).click(function(e) {
   goRight();
@@ -385,7 +387,7 @@ HELLO
       if(count == 1){
         $( ".backBtn" ).css("opacity", "0");
       }
-      else if(count == 3){
+      else if(count == max){
         $( ".nextBtn" ).css("opacity", "0");
       }
       else{
@@ -399,6 +401,29 @@ HELLO
       checkButton();
   }
 
+  var myElement = document.getElementById('pages');
+
+  if($(window).width() < 740){
+  // create a simple instance
+  // by default, it only adds horizontal recognizers
+  var mc = new Hammer(myElement);
+
+  // listen to events...
+  mc.on("panright", function() {
+    if(debounce == true && count != 1){
+      debounce = false;
+      goLeft();
+      setTimeout(function(){ debounce = true; }, 700);
+    }
+  });
+  mc.on("panleft", function() {
+    if(debounce == true && count != max){
+      debounce = false;
+      goRight();
+      setTimeout(function(){ debounce = true; }, 700);
+    }
+  });
+}
   window.onload = start();
 </script>
 
