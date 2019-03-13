@@ -48,11 +48,22 @@
   <div class="innerLiner">
     <div class="box">
       <div class="bookCover">
-      <a class="activeTitle" style="color: brown;">This is a very long book title, it makes me look quirky but the whole book is about how i feel odd and want to be more norml / less quirky</a>
-      <div class="pieceImg"><i style="font-size: 3em; color: brown;" class="far fa-thumbs-up"></i></div>
-      <br><br>
-      <a class="otherTitle" href="book2.html">Salmon Eggs</a>
-      </div>
+
+        <div id="indexBook">
+          <div class="bookTitle one">
+          <div class="activeTitle">Today Is Totally Fucked</div>
+          <br>
+          A. Sad Guy
+          </div>
+
+          <div class="bookTitle two">
+          <a href="book2.html"><div class="pieceTitle">Everything is very far away</div></a>
+          <br>
+          Tim Lao
+          </div>
+
+        </div>
+    </div>
     </div>
 
     <div class="box">
@@ -375,7 +386,7 @@
 <script src="book.js"></script>
 <script>
 function changeColor(){
-  var colors = ["rgba(255,255,255,1)","rgba(255,192,203,1)", "rgba(230,230,250,1)", "rgba(255,165,0,1)"];
+  var colors = ["#fefec8","rgba(255,192,203,1)", "rgba(230,230,250,1)", "rgba(255,165,0,1)"];
   $('body').css("background-color", colors[count]);
 }
 </script>

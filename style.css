@@ -18,14 +18,7 @@ body {
    font-style: italic;
  }
 
- .bookTitle{
-   text-align: center;
-   font-size: 1.5em;
-   font-weight: bold;
-   font-style: italic;
-   margin-bottom: 2em;
-   width: 80vw;
- }
+
 
  a, a:visited{
    text-decoration: none;
@@ -34,26 +27,92 @@ body {
 
 
  #indexBook{
-   min-height: 100vh;
+   min-height: calc(100vh - 8em);
    width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   /* margin-top: 2.99em; */
+ }
+
+ .indexFix{
+   margin-top: 5.5em;
  }
 
  #mobileArrows{
    display: none;
  }
 
- .bookTitle a{
-   color: blue;
+ .bookTitle{
+   text-align: center;
+   font-size: 1.5em;
+   font-weight: bold;
+   margin: 3em 0;
+   width: 80vw;
+   color: black;
  }
 
- .bookTitle a:hover{
-   text-decoration: underline;
+.one{
+  text-align: left;
+}
+
+.two{
+  text-align: right;
+}
+
+ .pieceTitle{
+   text-decoration: none;
+   display: inline-block;
+   font-size: 2em;
+
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+
+   background: linear-gradient(
+       #fff 0%
+     , #fff 50%
+     , #55f  50%
+     , #55f 100%
+   );
+   background-size: 100% 200%;
+
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
  }
 
+ .activeTitle{
+   text-decoration: none;
+   display: inline-block;
+   font-size: 2em;
+   color: #55f;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+ }
+
+.activeTitle:hover{
+  cursor: pointer;
+}
+
+ .pieceTitle:hover{
+   -webkit-animation: fillText 0.8s ease;
+   -moz-animation: fillText 0.8s ease;
+   animation: fillText 0.8s ease;
+   -webkit-animation-fill-mode: forwards;
+ }
+
+ @-webkit-keyframes fillText {
+     0%{background-position:50% 0%}
+     100%{background-position:50% 100%}
+ }
+ @-moz-keyframes fillText {
+     0%{background-position:50% 0%}
+     100%{background-position:50% 100%}
+ }
+ @keyframes fillText {
+     0%{background-position:50% 0%}
+     100%{background-position:50% 100%}
+ }
 
 
 
@@ -81,6 +140,14 @@ body {
  .nextBtn, .backBtn{
    background: none;
    border: none;
+ }
+
+ .nextBtn:hover, .backBtn:hover{
+   cursor: pointer;
+ }
+
+ button:focus{
+   outline:0;
  }
 
  .bookButtons a:hover{
@@ -141,12 +208,12 @@ body {
   padding: 3em;
 }
 
-.activeTitle{
+/* .activeTitle{
   font-size: 1.6em;
   font-weight: bold;
   font-style: italic;
   padding-bottom: 2em;
-}
+} */
 a.otherTitle{
   color: blue;
   font-size: 1.6em;
@@ -191,9 +258,6 @@ a.otherTitle:hover{
 
 
 @media only screen and (max-device-width: 480px) {
-.activeTitle, a.otherTitle{
-    font-size: 1.2em;
-  }
   h1{
     font-size: 1.4em;
   }
@@ -244,6 +308,17 @@ a.otherTitle:hover{
     font-size: 1.4em;
   }
 
+  .bookTitle{
+    margin-bottom: 0;
+  }
 
+ .pieceTitle, .activeTitle{
+   font-size: 1.7em;
+   hyphens: none;
+ }
+
+ .indexFix{
+   margin-top: 3em;
+ }
 
 }
