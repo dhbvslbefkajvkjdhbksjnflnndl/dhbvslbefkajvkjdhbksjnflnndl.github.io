@@ -108,6 +108,7 @@ body {
   width: 90vw;
 	white-space: nowrap;
 	overflow-x: hidden;
+  display: none;
 }
 
 .innerLiner{
@@ -164,15 +165,12 @@ a.otherTitle:hover{
   word-break: break-all;
 }
 
-.boxShadow{
-  background-image: linear-gradient(transparent, inherit);
-  background-position: bottom;
-  background-repeat: repeat-x;
-  background-size: 50px 50px;
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  bottom: 20px;
+.fadeout {
+    position: absolute;
+    bottom: 0em;
+    width: calc(100%);
+    height: 7em;
+    background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
 }
 
 .pageButtons{
@@ -255,6 +253,9 @@ a.otherTitle:hover{
     font-size: 1.4em;
   }
 
+.fadeout {
+  height: 7em;
+}
 
 
 }

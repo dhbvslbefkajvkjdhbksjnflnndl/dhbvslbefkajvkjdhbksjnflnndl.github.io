@@ -48,7 +48,7 @@
   <div class="innerLiner">
     <div class="box">
       <div class="bookCover">
-      <span class="activeTitle" style="color: brown;">This is a very long book title, it makes me look quirky but the whole book is about how i feel odd and want to be more norml / less quirky</span>
+      <a class="activeTitle" style="color: brown;">This is a very long book title, it makes me look quirky but the whole book is about how i feel odd and want to be more norml / less quirky</a>
       <div class=""><i style="font-size: 3em; color: brown;" class="far fa-thumbs-up"></i></div>
       <br><br>
       <a class="otherTitle" href="book2.html">Salmon Eggs</a>
@@ -370,18 +370,16 @@
 
 </div>
 
-<!-- <div class="boxShadow">
-
-</div> -->
+<div class="fadeout"></div>
 
 <script src="book.js"></script>
 <script>
 function changeColor(){
-  var colors = ["pink", "gold", "AliceBlue"];
-  $('body').css("background-color", colors[count-1]);
-  if(count == 0){
-    $('body').css("background-color", "#ffffff");
-  }
+  var colors = ["rgba(255,255,255,1)","rgba(255,192,203,1)", "rgba(230,230,250,1)", "rgba(255,165,0,1)"];
+  var colorso = ["rgba(255,255,255,0)","rgba(255,192,203,0)", "rgba(230,230,250,0)", "rgba(255,165,0,0)"];
+  $('body').css("background-color", colors[count]);
+  setTimeout(function(){$('.fadeout').css({background: "linear-gradient("+ colorso[count] +" 0%, "+ colors[count] +" 50%)"});}, 0);
+  $('.fadeout').delay(1000).fadeTo(700,1);
 }
 </script>
 </body>
