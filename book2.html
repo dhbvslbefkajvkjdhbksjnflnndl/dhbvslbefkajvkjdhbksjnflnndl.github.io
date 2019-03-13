@@ -371,6 +371,9 @@
 function changeColor(){
   var colors = ["teal", "hotpink", "lime"];
   $('body').css("background-color", colors[count-1]);
+  if(count == 0){
+    $('body').css("background-color", "#ffffff");
+  }
 }
 </script>
 

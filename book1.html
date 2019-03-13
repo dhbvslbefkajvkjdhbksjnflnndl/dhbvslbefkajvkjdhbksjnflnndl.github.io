@@ -379,6 +379,9 @@
 function changeColor(){
   var colors = ["pink", "gold", "AliceBlue"];
   $('body').css("background-color", colors[count-1]);
+  if(count == 0){
+    $('body').css("background-color", "#ffffff");
+  }
 }
 </script>
 </body>
