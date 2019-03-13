@@ -1,6 +1,7 @@
 var count = 1;
 var max = $(".box").length;
 var debounce = true;
+var scrollDebounce = true;
 
 $( ".nextBtn" ).click(function(e) {
 goRight();
@@ -8,6 +9,7 @@ goRight();
 $( ".backBtn" ).click(function(e) {
 goLeft();
 });
+
 function scrollDown(){
   $("html, body").animate({ scrollTop: $(document).height() }, 2300);
 }
@@ -122,6 +124,15 @@ $(window).scroll(function() {
   if($(window).width() < 730){
   mobileArrows('.box');
   }
+});
+
+
+$(window).scroll(function(){
+  if($(window).scrollTop() >= 200 && scrollDebounce == true){
+       $("html, body").animate({ scrollTop: $(document).height() }, 1200);
+       scrollDebounce = false;
+  }
+
 });
 
 window.onload = start();
