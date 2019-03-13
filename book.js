@@ -3,16 +3,11 @@ var max = $(".box").length;
 var debounce = true;
 var scrollDebounce = true;
 
-$( ".nextBtn" ).click(function(e) {
-  goRight();
-});
-
-$( ".activeTitle" ).click(function(e) {
+$( ".nextBtn, .activeTitle, .pieceImg" ).click(function(e) {
   goRight();
 });
 
 $( ".backBtn" ).click(function(e) {
-  $('.fadeout').hide();
   goLeft();
 });
 
