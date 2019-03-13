@@ -27,24 +27,16 @@
 </head>
 
 <body>
-
 <div id="title"><a href="index.html"><h1>son of bear parade</h1></a></div>
 <div id="mobileArrows">
 <button class="backBtn"><i class='fas fa-arrow-left'></i></button>
 <button class="nextBtn"><i class='fas fa-arrow-right'></i></button>
 </div>
 
-
-<div id="greeting" class="greeting">
-<div class="bookTitle">
-This is a very long book title, it makes me look quirky but the whole book is about how i feel odd and want to be more norml / less quirky
-<br><br>
-<span style="color: blue;">Salmon Eggs</span>
-</div>
-
 <div class="bookButtons">
-<a class="readBtn" href="book1.html">A</a> <button class="readBtn activeBtn">B</button>
+<button class="readBtn activeBtn">A</button> <a class="readBtn" href="book2.html">B</a>
 </div>
+
 
 
 </div>
@@ -58,6 +50,19 @@ This is a very long book title, it makes me look quirky but the whole book is ab
 </div>
 
   <div class="innerLiner">
+    <div class="box">
+      <div id="greeting" class="greeting">
+      <div class="bookTitle">
+      <a class="otherTitle" href="book1.html">This is a very long book title, it makes me look quirky but the whole book is about how i feel odd and want to be more normal / less quirky</a>
+      <br><br>
+      <span class="activeTitle">Salmon Eggs</span>
+      </div>
+
+      <div class=""><i style="font-size: 3em; color: pink;" class="fas fa-fish"></i></div>
+
+      </div>
+    </div>
+
     <div class="box">
           <h3>this is an overly massaged story title</h3>
           <p>On an exceptionally hot evening early in July a young man came out of the garret in which he lodged in S. Place and walked slowly, as though in hesitation, towards K. bridge.<br>
@@ -374,7 +379,12 @@ This is a very long book title, it makes me look quirky but the whole book is ab
 </div>
 
 <script src="book.js"></script>
-
+<script>
+function changeColor(){
+  var colors = ["teal", "hotpink", "lime"];
+  $('body').css("background-color", colors[count-1]);
+}
+</script>
 
 </body>
 </html>

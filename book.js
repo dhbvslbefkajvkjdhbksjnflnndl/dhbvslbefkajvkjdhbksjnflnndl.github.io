@@ -1,4 +1,4 @@
-var count = 1;
+var count = 0;
 var max = $(".box").length;
 var debounce = true;
 var scrollDebounce = true;
@@ -34,17 +34,22 @@ function goLeft(){
 }
 
 function checkButton(){
-    if(count == 1){
+    if(count == 0){
       $( ".backBtn" ).css("opacity", "0");
     }
-    else if(count == max){
+    else if(count == max-1){
       $( ".nextBtn" ).css("opacity", "0");
     }
     else{
       $( ".backBtn" ).css("opacity", "1");
       $( ".nextBtn" ).css("opacity", "1");
     }
-    document.getElementById("pageNumber").innerHTML = count.toString();
+    if(count == 0){
+    document.getElementById("pageNumber").innerHTML = " ";
+    }
+    else{
+      document.getElementById("pageNumber").innerHTML = count.toString();
+    }
 }
 
 function start(){
@@ -58,7 +63,7 @@ if($(window).width() < 740){
     var mc = new Hammer(this);
 
     mc.on('swiperight', function(){
-      if(debounce == true && count != 1){
+      if(debounce == true && count != 0){
         debounce = false;
         goLeft();
         setTimeout(function(){ debounce = true; }, 700);
@@ -66,7 +71,7 @@ if($(window).width() < 740){
     });
 
     mc.on('swipeleft', function(){
-      if(debounce == true && count != max){
+      if(debounce == true && count != max-1){
         debounce = false;
         goRight();
         setTimeout(function(){ debounce = true; }, 700);
@@ -74,11 +79,6 @@ if($(window).width() < 740){
     });
 
 });
-}
-
-function changeColor(){
-  var colors = ["pink", "gold", "AliceBlue"];
-  $('body').css("background-color", colors[count-1]);
 }
 
 function showArrows(){
@@ -127,12 +127,12 @@ $(window).scroll(function() {
 });
 
 
-$(window).scroll(function(){
-  if($(window).scrollTop() >= 200 && scrollDebounce == true){
-       $("html, body").animate({ scrollTop: $(document).height() }, 1200);
-       scrollDebounce = false;
-  }
-
-});
+// $(window).scroll(function(){
+//   if($(window).scrollTop() >= 200 && scrollDebounce == true){
+//        $("html, body").animate({ scrollTop: $(document).height() }, 1200);
+//        scrollDebounce = false;
+//   }
+//
+// });
 
 window.onload = start();
