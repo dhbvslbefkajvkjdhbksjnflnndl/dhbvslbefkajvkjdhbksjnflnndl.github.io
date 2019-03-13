@@ -4,12 +4,10 @@ var debounce = true;
 var scrollDebounce = true;
 
 $( ".nextBtn" ).click(function(e) {
-  $('.fadeout').hide();
   goRight();
 });
 
 $( ".activeTitle" ).click(function(e) {
-  $('.fadeout').hide();
   goRight();
 });
 
@@ -24,7 +22,7 @@ function scrollDown(){
 
 function goRight(){
     count++;
-    setTimeout(function(){ changeColor(); }, 0);
+    changeColor();
     width = $('.pageWrap').width();
     var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*1;
     var newLeftMargin = (initalLeftMargin - width);
@@ -33,7 +31,7 @@ function goRight(){
     }
 function goLeft(){
     count--;
-    setTimeout(function(){ changeColor(); }, 0);
+    changeColor();
     width = $('.pageWrap').width();
     var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*1;
     var newLeftMargin = (initalLeftMargin + width);
@@ -60,14 +58,10 @@ function checkButton(){
     }
 }
 
-function showAll(){
-  $('.pageWrap').fadeTo(100,1);
-}
+
 
 function start(){
-    showAll();
     checkButton();
-    $('.fadeout').show();
 }
 
 
@@ -79,7 +73,6 @@ if($(window).width() < 740){
     mc.on('swiperight', function(){
       if(debounce == true && count != 0){
         debounce = false;
-        $('.fadeout').hide();
         goLeft();
         setTimeout(function(){ debounce = true; }, 700);
       }
@@ -88,7 +81,6 @@ if($(window).width() < 740){
     mc.on('swipeleft', function(){
       if(debounce == true && count != max-1){
         debounce = false;
-        $('.fadeout').hide();
         goRight();
         setTimeout(function(){ debounce = true; }, 700);
       }
