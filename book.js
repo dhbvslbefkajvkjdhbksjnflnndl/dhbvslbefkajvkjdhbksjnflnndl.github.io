@@ -21,6 +21,7 @@ function scrollDown(){
 }
 
 function goRight(){
+  if(count < max-1){
     count++;
     changeColor();
     width = $('.pageWrap').width();
@@ -29,7 +30,9 @@ function goRight(){
     $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
     checkButton();
     }
+  }
 function goLeft(){
+    if(count > 0){
     count--;
     changeColor();
     width = $('.pageWrap').width();
@@ -37,6 +40,7 @@ function goLeft(){
     var newLeftMargin = (initalLeftMargin + width);
     $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
     checkButton();
+}
 }
 
 function checkButton(){
