@@ -382,8 +382,8 @@
 <script src="book.js"></script>
 <script>
 function changeColor(){
-  var colors = ["#ffb2ae","aqua", "lime", "orange"];
-  $('body').css("background-color", colors[count]);
+  var colors = ["#fefec8","rgba(255,192,203,1)", "rgba(230,230,250,1)", "#ffc87a"];
+  $('body').css("background-color", colors[count % colors.length]);
 }
 </script>
 

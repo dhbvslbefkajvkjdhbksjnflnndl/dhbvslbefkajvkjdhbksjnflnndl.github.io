@@ -48,7 +48,6 @@
   <div class="innerLiner">
     <div class="box">
       <div class="bookCover">
-
         <div id="indexBook">
           <div class="bookTitle one">
           <div class="activeTitle">Today Is Totally Fucked</div>
@@ -61,22 +60,21 @@
           <br>
           Tim Lao
           </div>
-
         </div>
     </div>
-    </div>
-
-    <div class="box">
-          <h3>the soap they use kills the fish in the harbour</h3>
+    </div><!--
+    --><div class="box">
+          <h3>In which I let you know I live somewhere with stairs</h3>
           <p>
-          i asked for a matcha smoothie <br>
-          made with soya, to go. <br>
-          the lady behind me <br>
-          told me that the packaging <br>
-          was not recyclable. <br>
+            I can't hear you, she said. <br>
+            What?<br>
+            I can't hear you.<br>
+            I can't hear you.<br>
+            Come up here, I can't hear you.<br>
+            What?<br>
           </p>
     </div><!--
-    --><div class="box box2">
+    --><div class="box">
           <h3>bad sex</h3>
           <p>
           with people<br>
@@ -87,7 +85,7 @@
           you do.<br>
           </p>
   </div><!--
-    --><div class="box box3">
+    --><div class="box">
           <h3>a poem about a bare</h3>
           <p>
           ass. Oh boy, <br>
@@ -95,6 +93,16 @@
           you would have said <br>
           it was a good idea. <br>
           </p>
+  </div><!--
+  --><div class="box">
+        <h3>the soap they use kills the fish in the harbour</h3>
+        <p>
+        i asked for a matcha smoothie <br>
+        made with soya, to go. <br>
+        the lady behind me <br>
+        told me that the packaging <br>
+        was not recyclable. <br>
+        </p>
   </div>
 </div>
 
@@ -106,7 +114,7 @@
 <script>
 function changeColor(){
   var colors = ["#fefec8","rgba(255,192,203,1)", "rgba(230,230,250,1)", "#ffc87a"];
-  $('body').css("background-color", colors[count]);
+  $('body').css("background-color", colors[count % colors.length]);
 }
 </script>
 </body>
