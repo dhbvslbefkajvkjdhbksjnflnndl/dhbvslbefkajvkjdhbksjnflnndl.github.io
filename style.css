@@ -139,14 +139,19 @@ body {
    color: black;
  }
 
- .nextBtn, .backBtn{
+ .nextBook, .nextBtn, .backBtn{
    background: none;
    border: none;
  }
 
- .nextBtn:hover, .backBtn:hover{
+ .nextBook, .nextBtn:hover, .backBtn:hover{
    cursor: pointer;
  }
+
+ .nextBook{
+   /* color: blue; */
+ }
+
 
  button:focus{
    outline:0;
@@ -267,8 +272,8 @@ a.otherTitle:hover{
 #contents{
   position: fixed;
   width: 100%;
-  bottom: 0;
-  height: 2em;
+  bottom: 0.5em;
+  height: auto;
   font-size: 0.8em;
   font-style: italic;
   font-weight: bold;
