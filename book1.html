@@ -124,8 +124,12 @@ function changeColor(){
   $('body').css("background-color", colors[count % colors.length]);
 }
 
+function nextBook(){
+  window.location.href = "book2.html";
+}
+
 $(document).on('click','.nextBook', function(){
-   window.location.href = "book2.html";
+   nextBook();
 })
 </script>
 <script src="book.js"></script>

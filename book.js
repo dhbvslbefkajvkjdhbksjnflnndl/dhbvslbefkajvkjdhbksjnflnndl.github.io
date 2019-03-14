@@ -109,6 +109,14 @@ if($(window).width() < 740){
     });
 
     mc.on('swipeleft', function(){
+      if(debounce == true && count == max-1){
+        debounce = false;
+        nextBook();
+        setTimeout(function(){ debounce = true; }, 700);
+      }
+    });
+
+    mc.on('swipeleft', function(){
       if(debounce == true && count != max-1){
         debounce = false;
         goRight();
