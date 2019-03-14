@@ -11,30 +11,74 @@ $( ".backBtn" ).click(function(e) {
   goLeft();
 });
 
+$( ".contentsItem" ).click(function(e) {
+  contentsClick(this);
+});
+
 function scrollDown(){
   $("html, body").animate({ scrollTop: $(document).height() }, 2300);
 }
 
+function contentsClick(el){
+   let contentID = $(el).attr("id")[$(el).attr("id").length -1];
+   do{
+       ++count;
+       changeColor();
+       alert(contentID);
+     }
+   while(count < contentID)
+}
+
+function contentsClick(el) {
+    var contentID = $(el).attr("id")[$(el).attr("id").length -1];
+    contentsScroll(contentID);
+}
+
+function contentsScroll(id) {
+  if(id > count){
+   goRight();
+   }
+   else if(id < count){
+    goLeft();
+   }
+   setTimeout(function () {
+      if (count < id && count < max) {
+         contentsScroll(id);
+      }
+      if (count > id && count > 0) {
+         contentsScroll(id);
+      }
+   }, 600)
+}
+
+
+
 function goRight(){
-  if(count < max-1){
-    count++;
+  if(count < max-1 && scrollDebounce == true){
+    scrollDebounce = false;
     changeColor();
     width = $('.pageWrap').width();
     var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*1;
     var newLeftMargin = (initalLeftMargin - width);
     $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
+    count++;
     checkButton();
+    contentsColor();
+    setTimeout(function(){ scrollDebounce = true; }, 600);
     }
   }
 function goLeft(){
-    if(count > 0){
-    count--;
+    if(count > 0 && scrollDebounce == true){
+    scrollDebounce = false;
     changeColor();
     width = $('.pageWrap').width();
     var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*1;
     var newLeftMargin = (initalLeftMargin + width);
     $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
+    count--;
     checkButton();
+    contentsColor();
+    setTimeout(function(){ scrollDebounce = true; }, 600);
 }
 }
 
@@ -132,6 +176,13 @@ $(window).scroll(function() {
   mobileArrows('.box');
   }
 });
+
+function contentsColor(){
+  $('.contentsItem').css("opacity", "0.4");
+  $('#item'+count.toString()).css("opacity", "1");
+}
+
+
 
 
 

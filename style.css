@@ -264,6 +264,29 @@ a.otherTitle:hover{
   display: none;
 }
 
+#contents{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 2em;
+  font-size: 0.8em;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contentsItem{
+  padding: 0 1em;
+  opacity: 0.3;
+  transition: opacity 0.5s;
+}
+
+.contentsItem:hover{
+  opacity: 1!important;
+  cursor: pointer;
+}
+
+
 
 @media only screen and (max-device-width: 480px) {
   h1{
@@ -324,6 +347,10 @@ a.otherTitle:hover{
 
  .indexFix{
    margin-top: 3em;
+ }
+
+ #contents{
+   display: none;
  }
 
 }
