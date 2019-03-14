@@ -19,40 +19,42 @@ function scrollDown(){
   $("html, body").animate({ scrollTop: $(document).height() }, 2300);
 }
 
-function contentsClick(el) {
-    var contentID = $(el).attr("id")[$(el).attr("id").length -1];
-    contentsScroll(contentID);
-}
-
-function contentsScroll(id) {
-  if(id > count){
-   goRight();
-   }
-   else if(id < count){
-    goLeft();
-   }
-   setTimeout(function () {
-      if (count < id && count < max) {
-         contentsScroll(id);
-      }
-      if (count > id && count > 0) {
-         contentsScroll(id);
-      }
-   }, 600)
-}
-
 // function contentsClick(el) {
 //     var contentID = $(el).attr("id")[$(el).attr("id").length -1];
-//     var shift = parseInt(contentID) - count;
-//     width = $('.pageWrap').width();
-//     var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*shift;
-//     var newLeftMargin = (initalLeftMargin - width);
-//     $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
-//     count = parseInt(contentID);
-//     changeColor();
-//     checkButton();
-//     contentsColor();
+//     contentsScroll(contentID);
 // }
+//
+// function contentsScroll(id) {
+//   if(id > count){
+//    goRight();
+//    }
+//    else if(id < count){
+//     goLeft();
+//    }
+//    setTimeout(function () {
+//       if (count < id && count < max) {
+//          contentsScroll(id);
+//       }
+//       if (count > id && count > 0) {
+//          contentsScroll(id);
+//       }
+//    }, 600)
+// }
+
+function contentsClick(el) {
+    var contentID = $(el).attr("id")[$(el).attr("id").length -1];
+    shift = parseInt(contentID) - count;
+    scrollDebounce = false;
+    width = $('.pageWrap').width() * shift;
+    var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*1;
+    var newLeftMargin = (initalLeftMargin - width);
+    $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
+    count = contentID;
+    changeColor();
+    checkButton();
+    contentsColor();
+    setTimeout(function(){ scrollDebounce = true; }, 600);
+    }
 
 function goRight(){
   if(count < max-1 && scrollDebounce == true){
