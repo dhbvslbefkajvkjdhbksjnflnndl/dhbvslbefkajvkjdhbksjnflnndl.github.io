@@ -19,16 +19,6 @@ function scrollDown(){
   $("html, body").animate({ scrollTop: $(document).height() }, 2300);
 }
 
-function contentsClick(el){
-   let contentID = $(el).attr("id")[$(el).attr("id").length -1];
-   do{
-       ++count;
-       changeColor();
-       alert(contentID);
-     }
-   while(count < contentID)
-}
-
 function contentsClick(el) {
     var contentID = $(el).attr("id")[$(el).attr("id").length -1];
     contentsScroll(contentID);
@@ -51,17 +41,28 @@ function contentsScroll(id) {
    }, 600)
 }
 
-
+// function contentsClick(el) {
+//     var contentID = $(el).attr("id")[$(el).attr("id").length -1];
+//     var shift = parseInt(contentID) - count;
+//     width = $('.pageWrap').width();
+//     var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*shift;
+//     var newLeftMargin = (initalLeftMargin - width);
+//     $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
+//     count = parseInt(contentID);
+//     changeColor();
+//     checkButton();
+//     contentsColor();
+// }
 
 function goRight(){
   if(count < max-1 && scrollDebounce == true){
     scrollDebounce = false;
-    changeColor();
     width = $('.pageWrap').width();
     var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*1;
     var newLeftMargin = (initalLeftMargin - width);
     $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
     count++;
+    changeColor();
     checkButton();
     contentsColor();
     setTimeout(function(){ scrollDebounce = true; }, 600);
@@ -70,12 +71,12 @@ function goRight(){
 function goLeft(){
     if(count > 0 && scrollDebounce == true){
     scrollDebounce = false;
-    changeColor();
     width = $('.pageWrap').width();
     var initalLeftMargin = $( ".innerLiner" ).css('margin-left').replace("px", "")*1;
     var newLeftMargin = (initalLeftMargin + width);
     $( ".innerLiner" ).animate({marginLeft: newLeftMargin}, 500);
     count--;
+    changeColor();
     checkButton();
     contentsColor();
     setTimeout(function(){ scrollDebounce = true; }, 600);
