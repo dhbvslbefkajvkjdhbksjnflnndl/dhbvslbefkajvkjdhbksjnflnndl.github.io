@@ -37,9 +37,8 @@ body {
    font-style: italic;
 
    -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: #2c2e7e;
+   -webkit-text-stroke-color: #3f418a;
    -webkit-text-fill-color: transparent;
-   mix-blend-mode: screen;
  }
 
 
@@ -322,7 +321,7 @@ a.otherTitle:hover{
   top: 0;
   width: 600px;
   height: 400px;
-  background-color: #13155e;
+  background-color: #01022e;
   transform: rotate(-30deg);
   z-index: -1;
 }
@@ -377,7 +376,6 @@ a.otherTitle:hover{
 
 .books{
   padding: 3em 15vw;
-  mix-blend-mode: screen;
 }
 
 .books .author{
@@ -486,11 +484,10 @@ a.otherTitle:hover{
  .shape{
    top: 20em;
    transform: rotate(-20deg);
-   background-color: #02043e;
  }
 
   .mainTitle{
-    font-size: 3em;
+    font-size: 3.2em;
   }
 
 
@@ -499,6 +496,6 @@ a.otherTitle:hover{
 
 @media only screen and (max-device-width: 320px) {
 .mainTitle{
-  font-size: 2.7em;
+  font-size: 2.8em;
 }
 }
