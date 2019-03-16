@@ -85,28 +85,29 @@ body {
 }
 
 .two{
-  text-align: right;
+  transform: rotate(180deg);
+  text-align: left;
 }
 
- .pieceTitle{
-   text-decoration: none;
-   display: inline-block;
-   font-size: 2em;
+.pieceTitle{
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
 
-   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 
-   background: linear-gradient(
-       #fff 0%
-     , #fff 50%
-     , #ccc  50%
-     , #ccc 100%
-   );
-   background-size: 100% 200%;
+  background: linear-gradient(
+      #fff 0%
+    , #fff 50%
+    , #ccc  50%
+    , #ccc 100%
+  );
+  background-size: 100% 200%;
 
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
- }
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
  .activeTitle{
    text-decoration: none;
@@ -121,25 +122,25 @@ body {
   cursor: pointer;
 }
 
- .pieceTitle:hover{
-   -webkit-animation: fillText 0.8s ease;
-   -moz-animation: fillText 0.8s ease;
-   animation: fillText 0.8s ease;
-   -webkit-animation-fill-mode: forwards;
- }
+.pieceTitle:hover{
+ -webkit-animation: fillText 0.8s ease;
+ -moz-animation: fillText 0.8s ease;
+ animation: fillText 0.8s ease;
+ -webkit-animation-fill-mode: forwards;
+}
 
- @-webkit-keyframes fillText {
-     0%{background-position:50% 0%}
-     100%{background-position:50% 100%}
- }
- @-moz-keyframes fillText {
-     0%{background-position:50% 0%}
-     100%{background-position:50% 100%}
- }
- @keyframes fillText {
-     0%{background-position:50% 0%}
-     100%{background-position:50% 100%}
- }
+@-webkit-keyframes fillText {
+   0%{background-position:50% 0%}
+   100%{background-position:50% 100%}
+}
+@-moz-keyframes fillText {
+   0%{background-position:50% 0%}
+   100%{background-position:50% 100%}
+}
+@keyframes fillText {
+   0%{background-position:50% 0%}
+   100%{background-position:50% 100%}
+}
 
 
 
