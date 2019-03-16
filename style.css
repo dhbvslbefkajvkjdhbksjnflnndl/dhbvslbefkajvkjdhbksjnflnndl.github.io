@@ -268,7 +268,7 @@ a.otherTitle:hover{
 
 #contents{
   position: fixed;
-  width: 100%;
+  width: calc(100%);
   bottom: 0.5em;
   height: auto;
   font-size: 0.8em;
