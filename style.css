@@ -4,7 +4,8 @@ body {
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-size: 11pt;
   line-height: 1.3;
-  background-color: white;
+  background-color: #fdede5;
+  color: #252773;
   transition: background-color 1s ease;
  }
 
@@ -36,18 +37,12 @@ body {
    font-style: italic;
 
    -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
-    -webkit-text-fill-color: transparent;
+   -webkit-text-stroke-color: #2c2e7e;
+   -webkit-text-fill-color: transparent;
+   mix-blend-mode: screen;
  }
 
-.book{
-  min-height: 100vh;
-  padding: 3em;
-}
 
-.book a:hover{
-  text-decoration: line-through;
-}
 
 
 
@@ -93,27 +88,17 @@ body {
    text-decoration: none;
    display: inline-block;
    font-size: 2em;
-
+   color: rgba(0,0,0,0);
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: black;
-
-   background: linear-gradient(
-       #fff 0%
-     , #fff 50%
-     , #ccc  50%
-     , #ccc 100%
-   );
-   background-size: 100% 200%;
-
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+   transition: color 0.7s ease;
  }
 
  .activeTitle{
    text-decoration: none;
    display: inline-block;
    font-size: 2em;
-   color: #ccc;
+   color: rgba(0,0,0,0);
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: black;
  }
@@ -123,10 +108,7 @@ body {
 }
 
 .pieceTitle:hover{
- -webkit-animation: fillText 0.8s ease;
- -moz-animation: fillText 0.8s ease;
- animation: fillText 0.8s ease;
- -webkit-animation-fill-mode: forwards;
+   color: rgba(0,0,0,1);
 }
 
 @-webkit-keyframes fillText {
@@ -173,11 +155,6 @@ body {
  .nextBook, .nextBtn:hover, .backBtn:hover{
    cursor: pointer;
  }
-
- .nextBook{
-   /* color: blue; */
- }
-
 
  button:focus{
    outline:0;
@@ -243,12 +220,6 @@ body {
   padding: 3em;
 }
 
-/* .activeTitle{
-  font-size: 1.6em;
-  font-weight: bold;
-  font-style: italic;
-  padding-bottom: 2em;
-} */
 a.otherTitle{
   color: blue;
   font-size: 1.6em;
@@ -338,6 +309,113 @@ a.otherTitle:hover{
   transform: rotate(180deg);
 }
 
+#wrapper{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: calc(100vh);
+}
+
+.shape{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 600px;
+  height: 400px;
+  background-color: #13155e;
+  transform: rotate(-30deg);
+  z-index: -1;
+}
+
+#footer{
+  position: absolute;
+  width: calc(100% - 4em);
+  padding: 2em;
+  height: 6em;
+  background-color: #252773;
+  color: #fef5f0;
+  -moz-box-shadow:    inset 0px 7px 5px -5px rgba(17,17,17,0.8);
+   -webkit-box-shadow: inset 0px 7px 5px -5px rgba(17,17,17,0.8);
+   box-shadow:         inset 0px 7px 5px -5px rgba(17,17,17,0.8);
+
+}
+
+#footer h2{
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 1.2em;
+  font-style: italic;
+  /* margin-bottom: 0.4em; */
+}
+
+#footer a{
+  font-size: 0.8em;
+  padding: 0.05em 0.4em 0.25em 0.4em;
+  color: #fef5f0;
+  background: #fef5f0;
+/* Old browsers */
+  background: linear-gradient(to left, rgba(0,0,0,0) 50%, white 50%);
+  background-size: 205% 100%;
+  background-position:right bottom;
+  transition:all 1s ease;
+}
+
+
+#footer a:hover{
+    background-position:left bottom;
+    color: #252773;
+}
+
+.copyright{
+  width: calc(100% - 6em);
+  text-align: center;
+  bottom: 1.2em;
+  position: absolute;
+  font-size: 0.7em;
+}
+
+
+.books{
+  padding: 3em 15vw;
+  mix-blend-mode: screen;
+}
+
+.books .author{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.3em;
+  color: #2c2e7e;
+  padding: 1em 0;
+}
+
+.books .bookTitle{
+  text-decoration: none;
+  font-size: 2.1em;
+  color: #2c2e7e;
+  transition: color 0.5s ease;
+}
+
+.books .bookTitle:hover{
+  color: #5e60b4;
+
+}
+
+.books .second{
+  padding-top: 3em;
+  text-align: right;
+}
+
+.aboutBox{
+  width: calc(100% - 26vw - 6em);
+  margin: 3em 13vw;
+  padding: 3em;
+}
+
+.aboutBox a, .aboutBox a:visited{
+  color: #2c2e7e;
+  text-decoration: underline;
+}
+
 
 
 @media only screen and (max-device-width: 480px) {
@@ -405,9 +483,22 @@ a.otherTitle:hover{
    display: none;
  }
 
+ .shape{
+   top: 20em;
+   transform: rotate(-20deg);
+   background-color: #02043e;
+ }
+
   .mainTitle{
     font-size: 3em;
   }
 
 
+
+}
+
+@media only screen and (max-device-width: 320px) {
+.mainTitle{
+  font-size: 2.7em;
+}
 }
