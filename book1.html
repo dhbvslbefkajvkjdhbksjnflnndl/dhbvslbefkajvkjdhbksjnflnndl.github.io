@@ -103,8 +103,18 @@
         told me that the packaging <br>
         was not recyclable. <br>
         </p>
+  </div><!--
+  --><div class="box">
+        <div class="bios">
+          <div class="bio1">
+            <b>A. Sad Guy</b> worries a lot about his place in the world. Should he have spent $100,000 to learn how to write poetry? Why isn't he better after all that Monet? Even bad art puns dont make him laugh any more. His poems about cats went viral, this helped a little.
+          </div>
+
+          <div class="bio2">
+            <b>Tim Lao</b> speaks very carefully to try and insinutate that he is thinking carefully. Tim does not excel at thinking.
+          </div>
+        </div>
   </div>
-</div>
 </div>
 
 
@@ -120,8 +130,10 @@
 
 <script>
 function changeColor(){
-  var colors = ["#fefec8","rgba(255,192,203,1)", "rgba(230,230,250,1)", "#ffc87a"];
+  var colors = ["#ffffff"];
+  var fontcolors = ["000000"];
   $('body').css("background-color", colors[count % colors.length]);
+  $('.box').css("color", fontcolors[count % colors.length]);
 }
 
 function nextBook(){

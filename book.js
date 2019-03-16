@@ -78,12 +78,12 @@ function checkButton(){
         $(".nextBtn").removeClass("nextBtn");
       }, 200);
     }
-    if(count == 0){
-    document.getElementById("pageNumber").innerHTML = " ";
-    }
-    else{
-      document.getElementById("pageNumber").innerHTML = count.toString();
-    }
+    // if(count == 0){
+    // document.getElementById("pageNumber").innerHTML = " ";
+    // }
+    // else{
+    //   document.getElementById("pageNumber").innerHTML = count.toString();
+    // }
 }
 
 

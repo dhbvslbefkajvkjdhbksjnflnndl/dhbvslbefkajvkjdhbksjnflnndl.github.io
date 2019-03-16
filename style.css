@@ -25,6 +25,31 @@ body {
    color: black;
  }
 
+ .mainTitle{
+   text-decoration: none;
+   text-align: center;
+   display: inline-block;
+   font-size: 4em;
+   padding: 1em;
+   width: calc(100% - 2em);
+   font-weight: bold;
+   font-style: italic;
+
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+    -webkit-text-fill-color: transparent;
+ }
+
+.book{
+  min-height: 100vh;
+  padding: 3em;
+}
+
+.book a:hover{
+  text-decoration: line-through;
+}
+
+
 
  #indexBook{
    min-height: calc(100vh - 8em);
@@ -74,8 +99,8 @@ body {
    background: linear-gradient(
        #fff 0%
      , #fff 50%
-     , #55f  50%
-     , #55f 100%
+     , #ccc  50%
+     , #ccc 100%
    );
    background-size: 100% 200%;
 
@@ -87,7 +112,7 @@ body {
    text-decoration: none;
    display: inline-block;
    font-size: 2em;
-   color: #55f;
+   color: #ccc;
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: black;
  }
@@ -204,6 +229,8 @@ body {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+
+  transition: color 1s ease;
 }
 
 .bookCover{
@@ -291,6 +318,25 @@ a.otherTitle:hover{
   cursor: pointer;
 }
 
+.bios{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bio1, .bio2{
+  /* padding: 1em 0 3em 0; */
+}
+
+.bio2{
+  transform: rotate(180deg);
+}
+
+.spin{
+  transform: rotate(180deg);
+}
+
 
 
 @media only screen and (max-device-width: 480px) {
@@ -357,5 +403,10 @@ a.otherTitle:hover{
  #contents{
    display: none;
  }
+
+  .mainTitle{
+    font-size: 3em;
+  }
+
 
 }
