@@ -194,10 +194,10 @@ body {
   display: inline-block;
   white-space: normal;
   margin: 0;
-  padding: 0 5em 2em 5em;
+  padding: 0 5em 5em 5em;
   width: calc(90vw - 10em);
   text-align:justify;
-  height: calc(100vh - 12em);
+  height: calc(100vh - 13em);
 
   overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
@@ -268,18 +268,22 @@ a.otherTitle:hover{
 
 #contents{
   position: fixed;
-  width: calc(100%);
-  bottom: 0.5em;
+  width: calc(100% - 2em);
+  bottom: 0em;
   height: auto;
   font-size: 0.8em;
+  padding: 1em;
   font-style: italic;
   font-weight: bold;
   text-align: center;
+  background-color: inherit;
+  /* transition: background-color 1s ease; */
 }
 
 .contentsItem{
-  padding: 0 1em;
+  padding: 0 0.1em 0.3em 0.5em;
   opacity: 0.3;
+  line-height: 1.5em;
   transition: opacity 0.5s;
 }
 
